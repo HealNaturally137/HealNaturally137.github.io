@@ -1,0 +1,61 @@
+
+/* Basic modern, accessible styling for GitHub Pages (no build tools needed) */
+:root{
+  --bg: #0b1220;
+  --card: #111a2b;
+  --text: #e9eef7;
+  --muted: #a7b3c7;
+  --primary: #4ea8ff;
+  --accent: #7af0b6;
+  --ring: #2b3750;
+  --radius: 16px;
+  --shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: linear-gradient(180deg, var(--bg), #0f182a 50%, #101828);
+  color:var(--text);
+  line-height:1.6;
+}
+a{color:var(--primary); text-decoration:none}
+a:hover{opacity:.9; text-decoration:underline}
+.container{max-width:1100px; margin:0 auto; padding:24px}
+.nav{
+  position:sticky; top:0; z-index:100;
+  backdrop-filter: blur(8px);
+  background: linear-gradient(180deg, rgba(16,24,40,.9), rgba(16,24,40,.6));
+  border-bottom:1px solid var(--ring);
+}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0}
+.logo{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.3px}
+.logo img{width:28px; height:28px}
+.nav a{padding:8px 10px; border-radius:10px}
+.nav a.active, .nav a[aria-current="page"]{background:rgba(78,168,255,.12); border:1px solid rgba(78,168,255,.2)}
+.hero{padding:72px 0; text-align:center}
+h1{font-size: clamp(2rem, 3vw + 1rem, 3rem); margin:.2em 0}
+h2{font-size: clamp(1.4rem, 1.2vw + 1rem, 2rem); margin:1.2em 0 .4em}
+p.lead{font-size:1.1rem; color:var(--muted); max-width:800px; margin: 0 auto 24px}
+.btn{display:inline-block; padding:12px 18px; border-radius:12px; background:var(--primary); color:#08111f; font-weight:700; border:1px solid rgba(78,168,255,.4); box-shadow: var(--shadow)}
+.btn.secondary{background:transparent; color:var(--text); border:1px solid var(--ring)}
+.grid{display:grid; gap:20px}
+.grid.cols-3{grid-template-columns: repeat(3, minmax(0,1fr))}
+.grid.cols-2{grid-template-columns: repeat(2, minmax(0,1fr))}
+@media (max-width:900px){.grid.cols-3{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
+.card{background: linear-gradient(180deg, var(--card), #0f1a2e); border:1px solid var(--ring); border-radius: var(--radius); padding:20px; box-shadow: var(--shadow)}
+.card h3{margin-top:0}
+.footer{margin-top:60px; padding:30px 0; border-top:1px dashed var(--ring); color:var(--muted); font-size:.95rem}
+.badge{display:inline-block; padding:6px 10px; background:rgba(122,240,182,.12); border:1px solid rgba(122,240,182,.2); border-radius:999px; font-size:.85rem; color:#b7ffe2}
+.kbd{font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background:#0a1220; border:1px solid var(--ring); padding:2px 6px; border-radius:6px}
+.code{background:#0a1220; border:1px solid var(--ring); padding:10px; border-radius:10px; overflow:auto}
+table{width:100%; border-collapse:collapse}
+td,th{border-bottom:1px solid var(--ring); padding:10px; text-align:left}
+figure{margin:0}
+.header-cta{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+ul.inline{display:flex; gap:14px; list-style:none; padding:0; margin:10px 0 0}
+ul.inline li{opacity:.9}
+.small{font-size:.9rem; color:var(--muted)}
+.section{padding:34px 0}
